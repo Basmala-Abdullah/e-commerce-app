@@ -1,0 +1,61 @@
+
+<div class="container my-5">
+    <h4>Login</h4>
+<hr />
+    <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm)">
+      <div class="mb-3">
+            <label for="email-address" class="form-label">Email Address:</label>
+            <input
+            type="email"
+            pattern=".+@(gmail\.com|yahoo\.com|hotmail\.com)"
+            class="form-control"
+            id="email-address"
+            
+            aria-describedby="emailHelp"
+            name="emailAddress"
+            [(ngModel)]="formValues.emailAddress"
+            required
+            #emailAddress="ngModel"
+            />
+
+            @if(emailAddress.invalid && emailAddress.touched){
+                @if(emailAddress.errors?.['pattern']){
+                    <div id="emailHelp" class="form-text text-danger">Invalid Email</div>
+                }
+                @else{
+                    <div id="emailHelp" class="form-text text-danger">Required</div>
+                }
+            }
+      </div>
+
+
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          aria-describedby="passwordHelp"
+          name="password"
+          
+          [(ngModel)]="formValues.password"
+          required
+          #password="ngModel"
+        />
+        @if(password.invalid && password.touched){
+        <div id="emailHelp" class="form-text text-danger">Required</div>
+        }
+      </div>
+      <div>
+        <p>Don't have an account? <a routerLink="/register">Register</a></p>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loginForm.invalid">
+        Login
+      </button>
+    </form>
+  </div>
+  

@@ -1,0 +1,58 @@
+<div class="container" >
+    <h2>Cart</h2>
+    @if (cartItems.length === 0) {
+    <p>Your cart is empty</p>
+    } @else {
+    <table class="table  table-hover table-sm " style="text-align: center;">
+      <thead >
+        <tr >
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Remove</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of cartItems; track item.product.id) {
+        <tr >
+          <td style="text-align: center;">
+                <!-- el cell ely fiha el image w el title --> 
+
+              <img [src]="item.product.thumbnail" style="height: 150px;" alt="productImg"/>
+
+                <p >{{ item.product.title }}</p>
+
+
+          </td>
+
+          <td >
+            <div class="d-flex justify-content-center align-items-center" style="margin: 50px;">
+                <button (click)="addToCart(item.product)" class="btn btn-info">+</button>
+                <span >{{ item.quantity }}</span>
+                <button (click)="decreaseQuantity(item.product)" class="btn btn-warning">-</button>
+            </div>
+
+          </td>
+
+          <td >
+            <div class="d-flex justify-content-center align-items-center" style="margin: 50px;">
+                            <button class="btn btn-danger" (click)="removeProduct(item.product)">x</button>
+            </div>
+
+        </td>
+
+          <td >
+            <div class="d-flex justify-content-center align-items-center" style="margin: 50px;">
+                ${{item.product.price}}
+
+            </div>
+        </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    <div class="cart-total">
+      <p> Total Price: <span > ${{ totalPrice }}</span></p>
+    </div>
+    }
+  </div>

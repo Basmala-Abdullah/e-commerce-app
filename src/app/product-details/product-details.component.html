@@ -1,0 +1,40 @@
+
+
+<div class = 'card'>
+    <div class="whole">
+        <div>
+            @if(productDetails.stock > 0) {
+                <span class="badge text-bg-success mb-2">In Stock</span>
+            } 
+            @else{
+                <span class="badge text-bg-danger">Out of Stock</span>
+            }
+            <div class="text-center">
+                <img [src]="productDetails.thumbnail" class="custom-card-img"   alt="..." />
+            </div>
+        </div>
+        
+        <div class = "card">
+            
+                <div class = "card-body ">
+
+                    <h5 class = "card-title">{{productDetails.title}}</h5>
+                    <p>{{productDetails.description}}</p>
+                    <p><img src="https://cdn-icons-png.flaticon.com/256/1490/1490853.png" class="icons">{{productDetails.price}}$</p>
+                    <p><img src="https://cdn-icons-png.flaticon.com/256/9679/9679540.png" class="icons">Reviews</p>
+                    <ul class="card-text">
+                        @for (review of productDetails.reviews; track $index) {
+                        <li>{{ review.reviewerName }}: {{ review.comment }}</li>
+                    }
+                    </ul>
+                    <p><img src="https://cdn-icons-png.flaticon.com/256/477/477406.png" class="icons">{{productDetails.rating}}/5</p>
+                    <p><img src="https://cdn-icons-png.flaticon.com/256/180/180758.png" class="icons">{{productDetails.brand}}</p>
+                    <p><img src="https://cdn-icons-png.flaticon.com/256/9160/9160750.png" class="icons">{{productDetails.warrantyInformation}}</p>
+                
+                    <div style="text-align: center; "> <button class="card-button" (click)="addToCart()">Add to Cart</button></div>
+                </div>
+    
+           
+        </div>
+    </div>
+</div>

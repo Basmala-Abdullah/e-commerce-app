@@ -1,0 +1,20 @@
+.custom-center{
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers the .details horizontally */
+    align-items: center; /* Centers the .details vertically */
+    border: none;
+    padding: 20px;
+}
+
+.cart-total{
+
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+
+}
+
+button{
+    margin: 0 10px;
+}

@@ -1,0 +1,21 @@
+<div class = "card">
+    <div class = "card-body ">
+    @if(productItem.stock > 0) {
+        <span class="badge text-bg-success mb-2">In Stock</span>
+    } 
+    @else{
+        <span class="badge text-bg-danger">Out of Stock</span>
+    }
+    <div class="text-center">
+        <img [src]="productItem.thumbnail" class="card-img-top" (click)="handleRedirect(productItem.id)"  alt="..." />
+       
+    </div>
+
+    <h5 class = "card-title">{{productItem.title}}</h5>
+    <p>{{productItem.description}}</p>
+    <p><img src="https://cdn-icons-png.flaticon.com/256/1490/1490853.png" class="icons">{{productItem.price}}$</p>
+    <p><img src="https://cdn-icons-png.flaticon.com/256/477/477406.png" class="icons">{{productItem.rating}}/5</p>
+    <button class="card-button" (click)="addToCart()">Add to Cart</button>
+    </div>
+
+</div>
