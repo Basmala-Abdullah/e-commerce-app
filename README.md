@@ -3,7 +3,7 @@ Welcome to the **Angular E-Commerce Application**! This project is a modern, res
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.1.
 
 ## Live Demo 🌐
-- [https://blogify-dat3.onrender.com/](https://e-commerce-app-jade-psi.vercel.app/)
+- [https://e-commerce-app-jade-psi.vercel.app/](https://e-commerce-app-jade-psi.vercel.app/)
 
 ## 🌟 Key Features
 
